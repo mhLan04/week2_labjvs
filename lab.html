@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="doCalc(); return false;">
+        <label for="hour">Enter hours</label><br>
+        <input type="number" id="hour" required><br><br>
+        <label for="minute">Enter minutes</label><br>
+        <input type="number" id="minute" required><br><br>
+        
+        <button type="submit">Calculate total minute</button>
+    </form>
+    <p id="calcTotalMinute"></p>
+    <script>
+        function calcTotalMinutes(hours, minutes) {
+            return (hours * 60) + minutes;
+        }
+
+        function doCalc() {
+            let hours = Number(document.getElementById("hour").value);
+            let minutes = Number(document.getElementById("minute").value);
+            let totalMinutes = calcTotalMinutes(hours, minutes);
+            document.getElementById("calcTotalMinute").innerHTML =
+            hours + " hours and " + minutes + " minutes is equal to " + totalMinutes + " minutes.";
+        }
+    </script>
+</body>
+</html>
